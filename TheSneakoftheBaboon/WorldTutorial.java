@@ -27,6 +27,12 @@ public class WorldTutorial extends World
    int wallX4=725;
    int wallY4 = 75;
    
+   // r=row
+   // c=column
+   int wallR1X=275;
+   int wallR1Y=175;
+   int wallNumR1=0;
+   
 
     /**
      * Constructor for objects of class WorldONE.
@@ -81,6 +87,15 @@ public class WorldTutorial extends World
             addObject(wall,wallX4,wallY4);
             wallY4= wallY4+50;
             wallNum4=wallNum4 + 1;
+        }
+        
+        // rows
+        while( wallNumR1<5)
+        {
+            Wall wall=new Wall();
+            addObject(wall,wallR1X,wallR1Y);
+            wallR1X= wallR1X+50;
+            wallNumR1=wallNumR1 + 1;
         }
     }
 }
