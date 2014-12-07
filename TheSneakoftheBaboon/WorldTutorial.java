@@ -27,11 +27,13 @@ public class WorldTutorial extends World
    int wallX4=725;
    int wallY4 = 75;
    
-   // r=row
-   // c=column
-   int wallR1X=275;
-   int wallR1Y=175;
+   // r stands for row
+   // c stand for column
+   // number represents the specific object
+   int wallR1X= 275;
+   int wallR1Y= 175;
    int wallNumR1=0;
+   
    
 
     /**
@@ -55,6 +57,9 @@ public class WorldTutorial extends World
     {
         Character character = new Character();
         addObject(character, 75, 75);
+        
+        Zookeeper zookeeper= new Zookeeper();
+        addObject(zookeeper,75,225);
         //Wall wall1=new Wall();
         //addObject(wall1,25,25);
         while( wallNum1<15)
@@ -89,7 +94,7 @@ public class WorldTutorial extends World
             wallNum4=wallNum4 + 1;
         }
         
-        // rows
+        
         while( wallNumR1<5)
         {
             Wall wall=new Wall();
@@ -97,5 +102,6 @@ public class WorldTutorial extends World
             wallR1X= wallR1X+50;
             wallNumR1=wallNumR1 + 1;
         }
+        
     }
 }

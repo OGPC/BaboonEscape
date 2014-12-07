@@ -18,8 +18,18 @@ public class Character extends Actor
         moveRight();
         moveUp();
         moveDown();
+        checkZooKeeper();
 
     }
+    
+    public void checkZooKeeper()
+    {
+        if(canSeeLeft(Zookeeper.class)||canSeeRight(Zookeeper.class)||canSeeUp(Zookeeper.class)||canSeeDown(Zookeeper.class))
+        {
+            Greenfoot.stop();
+        }
+    }
+    
 
     public void moveLeft()
     {
@@ -27,11 +37,7 @@ public class Character extends Actor
         {
             setLocation (getX()-2,getY());
         }
-        else if((Greenfoot.isKeyDown("left")))
-        {
-            setLocation (getX()+5,getY())  ;
-            Greenfoot.delay(7);
-        }
+  
     }
 
     public void moveRight()
@@ -40,11 +46,7 @@ public class Character extends Actor
         {
             setLocation (getX()+2,getY());
         }
-        else if((Greenfoot.isKeyDown("right")))
-        {
-            setLocation (getX()-5,getY())  ;
-            Greenfoot.delay(7);
-        }
+  
     }
 
     public void moveUp()
@@ -53,11 +55,7 @@ public class Character extends Actor
         {
             setLocation (getX(),getY()-2);
         }
-        else if((Greenfoot.isKeyDown("up")))
-        {
-            setLocation (getX(),getY()+5)  ;
-            Greenfoot.delay(7);
-        }
+  
     }
 
     public void moveDown()
@@ -66,11 +64,7 @@ public class Character extends Actor
         {
             setLocation (getX(),getY()+2);
         }
-        else if((Greenfoot.isKeyDown("down")))
-        {
-            setLocation (getX(),getY()-5)  ;
-            Greenfoot.delay(7);
-        }
+  
     }
 
     public boolean canSeeLeft(Class clss) 
