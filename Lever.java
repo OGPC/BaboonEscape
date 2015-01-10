@@ -12,10 +12,8 @@ public class Lever extends Actor
      * Act - do whatever the Lever wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
     public void act() 
     {
-        //if(X+Y=752)
-        
+        // Add your action code here.
     }    
 }
