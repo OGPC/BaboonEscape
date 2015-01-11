@@ -2,4 +2,6 @@
 comment0.params=
 comment0.target=WORLDTWO()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WORLDTWO.\r\n\ \r\n
-numComments=1
+comment1.params=
+comment1.target=void\ prepare()
+numComments=2
