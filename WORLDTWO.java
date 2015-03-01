@@ -6,8 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class WORLDTWO extends World
 {
+    public static int lockStatus=1;
+    public static int gameStatus=1;
+
     int wallNum1=0;
     int wallX1=25;
     int wallY1=25;
@@ -139,11 +143,20 @@ public class WORLDTWO extends World
     public WORLDTWO()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+         
         super(1100, 1100, 1); 
+        
 
         prepare();
+        
     }
     
+     public void act()
+    {
+       
+        gameOver();
+    }
+
     private void prepare()
     {
         Character character = new Character();
@@ -398,5 +411,25 @@ public class WORLDTWO extends World
             wallNum31=wallNum31 + 1;
         }
     }
+
+    private void gameOver()
+    {
+        if(gameStatus == 2)
+        {
+            Greenfoot.playSound("buzz.wav");
+
+            removeObjects(getObjects(Zookeeper.class));
+            removeObjects(getObjects(Zookeeper2.class));
+            removeObjects(getObjects(Zookeeper3.class));
+            removeObjects(getObjects(Trap.class));
+            removeObjects(getObjects(Lever.class));
+            removeObjects(getObjects(Wall.class));
+            removeObjects(getObjects(Character.class));
+            removeObjects(getObjects(Endgate.class));
+            Greenfoot.stop();
+        }
+    }
+    
+
 }
 

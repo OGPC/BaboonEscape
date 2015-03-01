@@ -10,10 +10,11 @@ public class WorldTutorial extends World
 {
     // 1 is top row
     // 2 is bottom row
+
     //3 is left column
     public static int lockStatus=1;
     public static int gameStatus=1;
-    
+
     int wallNum1=0;
     int wallX1=25;
     int wallY1=25;
@@ -66,16 +67,15 @@ public class WorldTutorial extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1); 
-        
 
         prepare();
     }
-    
+
     public void act()
     {
         gameOver();
+        //gameOver2();
     }
-    
 
     /**
      * Prepare the world for the start of the program. That is: create the initial
@@ -173,12 +173,31 @@ public class WorldTutorial extends World
             Greenfoot.playSound("buzz.wav");
 
             removeObjects(getObjects(Zookeeper.class));
+            removeObjects(getObjects(Zookeeper2.class));
+            removeObjects(getObjects(Zookeeper3.class));
             removeObjects(getObjects(Trap.class));
             removeObjects(getObjects(Lever.class));
             removeObjects(getObjects(Wall.class));
             removeObjects(getObjects(Character.class));
             removeObjects(getObjects(Endgate.class));
+            GameOver gameover= new GameOver();
+            addObject(gameover,375,375);
+            Greenfoot.delay(1000);
             Greenfoot.stop();
+
+            //loserino level
+
+            //WORLDTWO worldtwo=new WORLDTWO();
+            //gameStatus=1;
+            // Greenfoot.setWorld(worldtwo);
+            //Greenfoot.stop();
+
         }
+
     }
+    
+
+ 
+    
 }
+
